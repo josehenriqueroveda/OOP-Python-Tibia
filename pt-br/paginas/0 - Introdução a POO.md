@@ -1,5 +1,8 @@
 # Introdução à Programação Orientada a Objetos (POO)
 
+<img src="../imagens/banner-oop.jfif" alt="tibia" width="300" height="auto">
+
+
 ## O que é Programação Orientada a Objetos (POO)?
 
 A Programação Orientada a Objetos (POO) é um paradigma de programação que se baseia na organização do código em torno de objetos, unidades que representam entidades do mundo real. Esses objetos têm características (atributos) e comportamentos (métodos) que interagem entre si, proporcionando uma abordagem modular e eficiente para o desenvolvimento de software.
@@ -27,6 +30,8 @@ A POO oferece diversas vantagens, incluindo:
 ## História do Tibia
 
 O Tibia é um jogo online de role-playing que remonta a 1997, desenvolvido pela CipSoft. Ambientado em um mundo medieval e mágico, o Tibia permite que jogadores explorem, realizem missões, lutem contra criaturas e interajam em um ambiente multiplayer.
+
+![Tibia](https://www.tibiawiki.com.br/images/5/52/Tibia_Logo.png)
 
 ## Por que usar o Tibia neste Projeto?
 

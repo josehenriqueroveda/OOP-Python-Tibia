@@ -1,96 +1,101 @@
-import time
-from typing import Optional
-from random import randint
+from classes.Criatura import Criatura
+from classes.HabilidadeDano import HabilidadeDano
+from classes.HabilidadeCura import HabilidadeCura
+from classes.HabilidadeEspecial import HabilidadeEspecial
+from classes.Loot import Loot
+from classes.Resistencia import Resistencia
 
 
-class Habilidade:
-    def __init__(
-        self,
-        nome: str,
-        efeito: str,
-        classe: str,
-        dano_min: int,
-        dano_max: int,
-        dano_dot: int,
-        duracao_dot: int,
-        cura: int,
-        summon: Optional[Criatura] = None,
-        summon_quantidade: Optional[int] = None,
-    ):
-        self.nome = nome
-        self.efeito = efeito
-        self.classe = classe
-        self.dano_min = dano_min
-        self.dano_max = dano_max
-        self.dano_dot = dano_dot
-        self.duracao_dot = duracao_dot
-        self.cura = cura
-        self.summon = summon
-        self.summon_quantidade = summon_quantidade
+# Criando as habilidades de dano
+corpo_a_corpo = HabilidadeDano(
+    nome="Corpo a Corpo",
+    descricao="A Giant Spider causa 0-250 pontos de dano físico.",
+    tipo="Físico",
+    mana=0,
+    dano_min=0,
+    dano_max=250,
+)
 
-    def curar(self, alvo):
-        alvo.hp += self.cura
-        print(f"{alvo.nome} foi curado em {self.cura} pontos de vida.")
+poison_field = HabilidadeDano(
+    nome="Poison Field",
+    descricao="Envenena o solo ao redor do alvo, causando 5 de dano de veneno a cada 2 segundos por 3 minutos. O dano não é afetado pela armadura ou defesa do alvo.",
+    tipo="Earth",
+    mana=0,
+    dano_min=0,
+    dano_max=0,
+    dano_dot=5,
+    duracao_dot=180, # 3 minutos
+    intervalo_dot=2,
+)
 
-    def atacar(self, alvo):
-        dano = randint(self.dano_min, self.dano_max)
-        alvo.hp -= dano
-        print(f"{alvo.nome} recebeu {dano} pontos de dano.")
+poison_strike = HabilidadeDano(
+    nome="Poison Strike",
+    descricao="A Giant Spider causa 40-70 pontos de dano do tipo veneno.",
+    tipo="Físico",
+    mana=0,
+    dano_min=40,
+    dano_max=70,
+)
 
-    def ataque_dot(self, alvo):
-        alvo.hp -= self.dano_dot
-        time.sleep(2)
-        print(f"{alvo.nome} recebeu {self.dano_dot} pontos de dano.")
-        self.duracao_dot -= 2
-        if self.duracao_dot == 0:
-            print(f"O efeito de {self.nome} acabou.")
-        return
+# Criando as habilidades especiais
+summon_spider = HabilidadeEspecial(
+    nome="Summon Poison Spider",
+    descricao="A Giant Spider pode invocar 1 ou 2 Poison Spiders.",
+    mana=0
+)
 
-    def invocar_criaturas(self):
-        minions = []
-        for _ in range(self.summon_quantidade):
-            minions.append(self.summon)
-        print(f"{self.summon_quantidade} {self.summon} foram invocados.")
-        return minions
+strong_haste = HabilidadeEspecial(
+    nome="Strong Haste",
+    descricao="A Giant Spider pode aumentar sua velocidade.",
+    mana=0
+)
 
-    def __str__(self):
-        return self.nome
+# Criando as vulnerabilidades aos tipos de dano
+vulnerabilidades = Vulnerabilidade(
+    fisico=100,
+    fogo=110, # Vulnerável
+    gelo=80, # Resistente
+    morte=100,
+    energia=80, # Resistente
+    sagrado=100,
+    terra=0, # Imune
+    cura=100,
+)
 
+# Criando o loot da Giant Spider
+gs_loots = [
+    Loot(nome="Gold Coin", quantidade=randint(0, 50), chance=1.0),
+    Loot(nome="Posion Arrows", quantidade=randint(0, 12), chance=0.25),
+    Loot(nome="Plate Armor", quantidade=1, chance=0.25),
+    Loot(nome="Plate Legs", quantidade=1, chance=0.25),
+    Loot(nome="String Health Potion", quantidade=1, chance=0.08),
+    Loot(nome="Spider Silk", quantidade=randint(0, 2), chance=0.08),
+    Loot(nome="Steel Helmet", quantidade=1, chance=0.08),
+    Loot(nome="Two Handed Sword", quantidade=1, chance=0.08),
+    Loot(nome="Knight Armor", quantidade=1, chance=0.03),
+    Loot(nome="Knight Legs", quantidade=1, chance=0.03),
+    Loot(nome="Time Ring", quantidade=1, chance=0.03),
+    Loot(nome="Lightning Headband", quantidade=1, chance=0.01),
+    Loot(nome="Platinum Amulet", quantidade=1, chance=0.01)
+]
 
-class Criatura:
-    def __init__(
-        self,
-        nome,
-        hp,
-        dificuldade,
-        exp,
-        ocorrencia,
-        velocidade,
-        armadura,
-        mitigacao,
-        habilidades: Habilidade,
-        loot,
-        vulnerabilidades,
-        imunidades,
-        pode_ser_puxado,
-        empurra_objetos,
-        passa_por,
-    ):
-        self.nome = nome
-        self.hp = hp
-        self.dificuldade = dificuldade
-        self.exp = exp
-        self.ocorrencia = ocorrencia
-        self.velocidade = velocidade
-        self.armadura = armadura
-        self.mitigacao = mitigacao
-        self.habilidades = habilidades
-        self.loot = loot
-        self.vulnerabilidades = vulnerabilidades
-        self.imunidades = imunidades
-        self.pode_ser_puxado = pode_ser_puxado
-        self.empurra_objetos = empurra_objetos
-        self.passa_por = passa_por
-
-    def __str__(self):
-        return self.nome
+# Criando a Giant Spider
+giant_spider = Criatura(
+    nome="Giant Spider",
+    hp=1300,
+    dificuldade="Médio",
+    exp=900,
+    ocorrencia="Comum",
+    velocidade=120,
+    armadura=30,
+    mitigacao=1.04,
+    habilidades_dano=[corpo_a_corpo, poison_field, poison_strike],
+    habilidades_cura=[],
+    habilidades_especiais=[summon_spider, strong_haste],
+    loot=gs_loots,
+    vulnerabilidades=vulnerabilidades,
+    imunidades=["Veneno", "Paralisia", "Invisibilidade"],
+    pode_ser_puxado=False,
+    empurra_objetos=True,
+    passa_por=["Veneno", "Energia"]
+)

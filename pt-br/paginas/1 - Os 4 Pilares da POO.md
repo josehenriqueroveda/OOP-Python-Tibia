@@ -62,7 +62,7 @@ Um criatura comum possui um nome e pontos de HP. _(Para fins didáticos, vamos c
 Podemos utilizar o conceito de encapsulamento, tornando os atributos privados, ou seja, acessíveis apenas dentro da classe utilizando o prefixo `_` e criando métodos para acessá-los e modificá-los.
 
 ```python
-class CommonMonster:
+class Criatura:
     def __init__(self, nome, hp, exp):
         self._nome = nome
         self._hp = hp
@@ -71,8 +71,8 @@ class CommonMonster:
     def receber_dano(self, dano):
         self._hp -= dano
 
-# Criando o mostro e causando dano nele
-rat = CommonMonster('Rat', 20, 5)
+# Criando a criatura e causando dano nela
+rat = Criatura('Rat', 20, 5)
 rat.receber_dano(10)
 ```
 
@@ -81,16 +81,16 @@ rat.receber_dano(10)
   
 Vamos considerar agora o criatura **Minotaur Mage**. ![Minotaur Mage](https://www.tibiawiki.com.br/images/f/f6/Minotaur_Mage.gif)
 
-Ele possui os mesmos atributos da classe **CommonMonster**, mas também possui um atributo de _spells_, que é uma lista de magias que ele pode utilizar.
+Ele possui os mesmos atributos da classe **Criatura**, mas também possui um atributo de _spells_, que é uma lista de magias que ele pode utilizar.
 
 ```python
-class MageMonster(CommonMonster):
+class CriaturaMagica(Criatura):
     def __init__(self, nome, hp, spells):
         super().__init__(nome, hp)
         self._spells = spells
 
 # Criando o Minotaur Mage
-minotaur_mage = MageMonster('Minotaur Mage', 155, ['Fireball', 'Great Fireball'])
+minotaur_mage = CriaturaMagica('Minotaur Mage', 155, ['Fireball', 'Great Fireball'])
 ```
 
 ### 4. Polimorfismo
@@ -123,7 +123,7 @@ player = Player('Darius Calad', 'Knight', 185, 90, 470, 8)
 E um **Rotworm**.![Rotworm](https://www.tibiawiki.com.br/images/b/b9/Rotworm.gif)
 
 ```python
-class CommonMonster:
+class Criatura:
     def __init__(self, nome, hp, exp):
         self._nome = nome
         self._hp = hp
@@ -136,7 +136,7 @@ class CommonMonster:
         self._hp -= dano
 
 # Criando o Rotworm
-rotworm = CommonMonster('Rotworm', 65, 40)
+rotworm = Commoncriatura('Rotworm', 65, 40)
 ```
 
 Ambos possuem o método `atacar`, que recebe um alvo e um dano, e chama o método `receber_dano` do alvo.
