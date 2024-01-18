@@ -68,7 +68,6 @@ A classe **HabilidadeEspecial** terá os seguintes atributos:
 - `nome`: Nome da habilidade.
 - `descricao`: Descrição da habilidade.
 - `mana`: Quantidade de mana necessária para usar a habilidade.
-- `efeito`: Função que será executada ao usar a habilidade.
 
 
 Levantando esses atributos, podemos criar as classes **HabilidadeDano**, **HabilidadeCura** e **HabilidadeEspecial** em Python.
@@ -283,7 +282,9 @@ class Criatura:
         dropped_loot = []
         for loot in self.loot:
             if random() <= loot.chance:
-                dropped_loot.append(loot)
+                drop = (loot.quantidade, loot.nome)
+                dropped_loot.append(drop)
+        print(f"{self.nome} dropou {dropped_loot}")
         return dropped_loot
     
     def die(self):
@@ -300,6 +301,7 @@ class Criatura:
 Agora que já criamos a classe **Criatura**, vamos criar a **Giant Spider**, com suas respectivas habilidades, loot e vulnerabilidades.
 
 ```python
+from random import randint
 from classes.Criatura import Criatura
 from classes.HabilidadeDano import HabilidadeDano
 from classes.HabilidadeCura import HabilidadeCura
@@ -366,8 +368,8 @@ vulnerabilidades = Vulnerabilidade(
 
 # Criando o loot da Giant Spider
 gs_loots = [
-    Loot(nome="Gold Coin", quantidade=randint(0, 50), chance=1.0),
-    Loot(nome="Posion Arrows", quantidade=randint(0, 12), chance=0.25),
+    Loot(nome="Gold Coin", quantidade=randint(0, 189), chance=1.0),
+    Loot(nome="Poison Arrows", quantidade=randint(0, 12), chance=0.25),
     Loot(nome="Plate Armor", quantidade=1, chance=0.25),
     Loot(nome="Plate Legs", quantidade=1, chance=0.25),
     Loot(nome="String Health Potion", quantidade=1, chance=0.08),
@@ -453,7 +455,7 @@ Finalmente, vamos testar o loot da **Giant Spider**.
 
 ```python
 >>> giant_spider.drop_loot()
-[Gold Coin, Posion Arrows,Plate Legs]
+Giant Spider dropou [(104, 'Gold Coin'), (1, 'Plate Armor'), (1, 'String Health Potion')]
 ```
 
 ## Conclusão
