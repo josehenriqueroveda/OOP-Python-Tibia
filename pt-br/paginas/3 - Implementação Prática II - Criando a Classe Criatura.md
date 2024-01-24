@@ -372,7 +372,7 @@ gs_loots = [
     Loot(nome="Poison Arrows", quantidade=randint(0, 12), chance=0.25),
     Loot(nome="Plate Armor", quantidade=1, chance=0.25),
     Loot(nome="Plate Legs", quantidade=1, chance=0.25),
-    Loot(nome="String Health Potion", quantidade=1, chance=0.08),
+    Loot(nome="Strong Health Potion", quantidade=1, chance=0.08),
     Loot(nome="Spider Silk", quantidade=randint(0, 2), chance=0.08),
     Loot(nome="Steel Helmet", quantidade=1, chance=0.08),
     Loot(nome="Two Handed Sword", quantidade=1, chance=0.08),
@@ -455,7 +455,7 @@ Finalmente, vamos testar o loot da **Giant Spider**.
 
 ```python
 >>> giant_spider.drop_loot()
-Giant Spider dropou [(104, 'Gold Coin'), (1, 'Plate Armor'), (1, 'String Health Potion')]
+Giant Spider dropou [(104, 'Gold Coin'), (1, 'Plate Armor'), (1, 'Strong Health Potion')]
 ```
 
 ## Conclusão
@@ -463,11 +463,3 @@ Giant Spider dropou [(104, 'Gold Coin'), (1, 'Plate Armor'), (1, 'String Health 
 Nessa implementação prática, foi apresentado como criar uma classe **Criatura** e como criar suas respectivas habilidades, loot e vulnerabilidades.
 
 Agora que já foi apresentado como criar uma classe **Criatura**, você pode criar as suas próprias criaturas e testar suas habilidades, loot e vulnerabilidades.
-
-
-
-
-
-
-
-
