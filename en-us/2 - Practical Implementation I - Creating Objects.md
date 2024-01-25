@@ -16,6 +16,25 @@ class Item:
 
 A classe **Item** possui dois atributos: **nome** e **peso**. O atributo **nome** representa o nome do item, e o atributo **peso** representa o peso do item. Ambos são inicializados através do método `__init__`, que recebe dois parâmetros: **nome** e **peso**. O método `__init__` é chamado sempre que um objeto é criado a partir de uma classe, e é responsável por inicializar os atributos do objeto.
 
+O item também possui um método chamado `__str__`, que retorna uma string contendo o nome e o peso da tocha, simulando a ação "**View Item**":
+
+```python
+    def __str__(self):
+        return f"You see a {self.nome}. It weighs {self.peso} oz."
+```
+
+A classe **Item** completa ficará assim:
+
+```python
+class Item:
+    def __init__(self, nome, peso):
+        self.nome = nome
+        self.peso = peso
+
+    def __str__(self):
+        return f"You see a {self.nome}. It weighs {self.peso} oz."
+```
+
 Agora podemos criar a classe **Torch**, que representa a tocha do Tibia:
 
 ```python
@@ -45,14 +64,7 @@ A classe **Torch** possui três atributos: **nome**, **peso** e **acesa**. Os at
 
 O atributo **acesa** é inicializado com o valor `False` por padrão, mas pode ser alterado para `True` através do método `acende`, que altera o valor do atributo **acesa** para `True` e imprime uma mensagem informando que a tocha foi acesa. O método `acende` também verifica se a tocha já está acesa, e caso esteja, imprime uma mensagem informando que a tocha já está acesa. O método `apaga` funciona de forma análoga ao método `acende`, porém altera o valor do atributo **acesa** para `False` e imprime uma mensagem informando que a tocha foi apagada.
 
-A tocha também possui um método chamado `__str__`, que retorna uma string contendo o nome e o peso da tocha, simulando a ação "View Item":
-
-```python
-    def __str__(self):
-        return f"You see a {self.nome}. It weighs {self.peso} oz."
-```
-
-Além disso ela também tem um "tempo de vida", que é o tempo que ela permanece acesa. Para isso, vamos criar um atributo chamado **tempo_de_vida** e um método chamado `diminui_tempo_de_vida`, que é ativado ao acender a tocha e ao passar do tempo vai diminuindo o tempo de vida da tocha. Quando o tempo de vida da tocha chegar a 0, ela se apaga automaticamente.
+Além disso ela também tem um "**tempo de vida**", que é o tempo que ela permanece acesa. Para isso, vamos criar um atributo chamado **tempo_de_vida** e um método chamado `diminui_tempo_de_vida`, que é ativado ao acender a tocha e ao passar do tempo vai diminuindo o tempo de vida da tocha. Quando o tempo de vida da tocha chegar a 0, ela se apaga automaticamente.
 
 ```python
 import time

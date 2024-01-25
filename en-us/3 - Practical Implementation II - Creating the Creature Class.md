@@ -8,7 +8,7 @@ Nessa implementação prática, vamos replicar a temida **Giant Spider**. ![Gian
 
 Acessando sua página no [Tibia Wiki](https://www.tibiawiki.com.br/wiki/Giant_Spider) podemos ver que ela possui os seguintes atributos básicos:
 
-![Giant Spider](../imagens/gs.png)
+![Giant Spider](../../images/gs.png)
 
 Assim como informações sobre suas **vulnerabilidades**, **imunidades**, **habilidades** e **loot**.
 
@@ -41,7 +41,7 @@ Antes de criar a classe **Criatura**, vamos criar as classes **Habilidade**, **L
 
 Vamos analisar as habilidades da **Giant Spider**, e abstrair os atributos que serão necessários para criar as classes **HabilidadeDano**, **HabilidadeCura** e **HabilidadeEspecial**.
 
-![Giant Spider](../imagens/gs_skills.png)
+![Giant Spider](../../images/gs_skills.png)
 
 A classe **HabilidadeDano** terá os seguintes atributos:
 
@@ -170,7 +170,7 @@ class HabilidadeEspecial:
 
 Vamos analisar como os loots da **Giant Spider** são apresentados no Tibia Wiki.
 
-![Giant Spider](../imagens/gs_loot.png)
+![Giant Spider](../../images/gs_loot.png)
 
 A partir da imagem acima, podemos criar classe **Loot** com os seguintes atributos:
 
@@ -196,7 +196,7 @@ class Loot:
 
 Os criaturas do Tibia possuem resistências a determinados tipos de dano. Vamos analisar as resistências da **Giant Spider**.
 
-![Giant Spider](../imagens/gs_resists.png)
+![Giant Spider](../../images/gs_resists.png)
 
 A classe **Vulnerabilidades** terá os seguintes atributos:
 

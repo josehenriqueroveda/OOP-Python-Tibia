@@ -16,7 +16,7 @@ Na POO, é comum falarem sobre os 4 pilares da programação orientada a objetos
 Vamos considerar um objeto simples do Tibia em Python, uma **Torch**. ![Torch](https://www.tibiawiki.com.br/images/9/90/Torch.gif)
 
 
- Ela possui um **nome**, um **peso** e um status de **acesa** ou não.
+Ela possui um **nome**, um **peso** e um status de **acesa** ou não.
 
 Sua representação em Python seria algo como:
 
@@ -55,8 +55,7 @@ tocha.acende()
 
 Vamos utilizar de exemplo um dos criaturas mais comuns do Tibia, o **Rat**. ![Rat](https://www.tibiawiki.com.br/images/a/af/Rat.gif) 
 
-Um criatura comum possui um nome e pontos de HP. _(Para fins didáticos, vamos considerar por enquanto apenas esses 2 atributos)_.
-
+Uma criatura comum possui um nome e pontos de HP. _(Para fins didáticos, vamos considerar por enquanto apenas esses 2 atributos)_.
 
 
 Podemos utilizar o conceito de encapsulamento, tornando os atributos privados, ou seja, acessíveis apenas dentro da classe utilizando o prefixo `_` e criando métodos para acessá-los e modificá-los.
