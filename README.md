@@ -59,7 +59,6 @@ Clone este repositório para o seu computador.
 git clone https://github.com/josehenriqueroveda/OOP-Python-Tibia.git
 ```
 
-
 ### ⚙️ Links Úteis:
 
 **Documentação Python**: https://docs.python.org/3/
@@ -75,3 +74,5 @@ A comunidade está aqui para te ajudar!
 
 Boa sorte em sua aventura!
 ```
+
+## Gostou do projeto? Dê uma estrela ⭐️ para apoiar o repositório!
