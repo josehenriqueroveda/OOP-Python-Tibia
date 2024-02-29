@@ -8,9 +8,9 @@ Nessa implementação prática, vamos replicar a temida **Giant Spider**. ![Gian
 
 Acessando sua página no [Tibia Wiki](https://www.tibiawiki.com.br/wiki/Giant_Spider) podemos ver que ela possui os seguintes atributos básicos:
 
-![Giant Spider](../../images/gs.png)
+![Giant Spider](../images/gs.png)
 
-Assim como informações sobre suas **vulnerabilidades**, **imunidades**, **habilidades** e **loot**.
+Assim como informações sobre suas **resistencias**, **imunidades**, **habilidades** e **loot**.
 
 Portanto a nossa classe **Criatura** completa terá os seguintes atributos:
 
@@ -26,7 +26,7 @@ Portanto a nossa classe **Criatura** completa terá os seguintes atributos:
 - `habilidades_cura`: Habilidades de cura da criatura.
 - `habilidades_especiais`: Habilidades especiais da criatura.
 - `loot`: Loot que a criatura pode dropar ao ser derrotado e suas respectivas probabilidades.
-- `vulnerabilidades`: Vulnerabilidades da criatura a determinados tipos de dano.
+- `resistencias`: Resistencias da criatura a determinados tipos de dano.
 - `imunidades`: Imunidades da criatura a certos efeitos.
 - `pode_ser_puxado`: Indica se a criatura pode ser puxado pelo jogador.
 - `empurra_objetos`: Indica se o criatura pode empurrar objetos.
@@ -35,13 +35,13 @@ Portanto a nossa classe **Criatura** completa terá os seguintes atributos:
 
 ## Criando a classe Criatura
 
-Antes de criar a classe **Criatura**, vamos criar as classes **Habilidade**, **Loot** e **Vulnerabilidades**. Essas classes serão usadas para criar os atributos `habilidades`, `loot` e `vulnerabilidades` da classe **Criatura**.
+Antes de criar a classe **Criatura**, vamos criar as classes **Habilidade**, **Loot** e **Resistencias**. Essas classes serão usadas para criar os atributos `habilidades`, `loot` e `resistencias` da classe **Criatura**.
 
 ### Criando a classe Habilidade
 
 Vamos analisar as habilidades da **Giant Spider**, e abstrair os atributos que serão necessários para criar as classes **HabilidadeDano**, **HabilidadeCura** e **HabilidadeEspecial**.
 
-![Giant Spider](../../images/gs_skills.png)
+![Giant Spider](../images/gs_skills.png)
 
 A classe **HabilidadeDano** terá os seguintes atributos:
 
@@ -170,7 +170,7 @@ class HabilidadeEspecial:
 
 Vamos analisar como os loots da **Giant Spider** são apresentados no Tibia Wiki.
 
-![Giant Spider](../../images/gs_loot.png)
+![Giant Spider](../images/gs_loot.png)
 
 A partir da imagem acima, podemos criar classe **Loot** com os seguintes atributos:
 
@@ -192,13 +192,13 @@ class Loot:
         return self.nome
 ```
 
-### Criando a classe Vulnerabilidades
+### Criando a classe Resistencias
 
 Os criaturas do Tibia possuem resistências a determinados tipos de dano. Vamos analisar as resistências da **Giant Spider**.
 
-![Giant Spider](../../images/gs_resists.png)
+![Giant Spider](../images/gs_resists.png)
 
-A classe **Vulnerabilidades** terá os seguintes atributos:
+A classe **Resistencias** terá os seguintes atributos:
 
 - `fisico`: Porcentagem de dano físico recebido.
 - `fogo`: Porcentagem de dano de fogo recebido.
@@ -209,10 +209,10 @@ A classe **Vulnerabilidades** terá os seguintes atributos:
 - `terra`: Porcentagem de dano de terra recebido.
 - `cura`: Porcentagem de cura recebida.
 
-A classe **Vulnerabilidades** completa ficará da seguinte forma:
+A classe **Resistencias** completa ficará da seguinte forma:
 
 ```python
-class Vulnerabilidade:
+class Resistencia:
     def __init__(self, fisico: int, fogo: int, gelo: int, morte: int, energia: int, sagrado: int, terra: int, cura: int):
         self.fisico = fisico
         self.fogo = fogo
@@ -224,7 +224,7 @@ class Vulnerabilidade:
         self.cura = cura
 ```
 
-Agora que já criamos as classes **Habilidade**, **Loot** e **Vulnerabilidade**, podemos criar a classe **Criatura** e atribuir os tipos de dados para cada atributo.
+Agora que já criamos as classes **Habilidade**, **Loot** e **Resistencia**, podemos criar a classe **Criatura** e atribuir os tipos de dados para cada atributo.
 
 ### Criando a classe Criatura
 
@@ -254,7 +254,7 @@ class Criatura:
         habilidades_cura: List[HabilidadeCura],
         habilidades_especiais: List[HabilidadeEspecial],
         loot: List[Loot],
-        vulnerabilidades: Vulnerabilidade,
+        resistencias: Resistencia,
         imunidades: List[str],
         pode_ser_puxado: bool,
         empurra_objetos: bool,
@@ -272,7 +272,7 @@ class Criatura:
         self.habilidades_cura = habilidades_cura
         self.habilidades_especiais = habilidades_especiais
         self.loot = loot
-        self.vulnerabilidades = vulnerabilidades
+        self.resistencias = resistencias
         self.imunidades = imunidades
         self.pode_ser_puxado = pode_ser_puxado
         self.empurra_objetos = empurra_objetos
@@ -298,7 +298,7 @@ class Criatura:
         return self.nome
 ```
 
-Agora que já criamos a classe **Criatura**, vamos criar a **Giant Spider**, com suas respectivas habilidades, loot e vulnerabilidades.
+Agora que já criamos a classe **Criatura**, vamos criar a **Giant Spider**, com suas respectivas habilidades, loot e resistencias.
 
 ```python
 from random import randint
@@ -354,8 +354,8 @@ strong_haste = HabilidadeEspecial(
     mana=0
 )
 
-# Criando as vulnerabilidades aos tipos de dano
-vulnerabilidades = Vulnerabilidade(
+# Criando as resistencias aos tipos de dano
+resistencias = Resistencia(
     fisico=100,
     fogo=110, # Vulnerável
     gelo=80, # Resistente
@@ -397,7 +397,7 @@ giant_spider = Criatura(
     habilidades_cura=[],
     habilidades_especiais=[summon_spider, strong_haste],
     loot=gs_loots,
-    vulnerabilidades=vulnerabilidades,
+    resistencias=resistencias,
     imunidades=["Veneno", "Paralisia", "Invisibilidade"],
     pode_ser_puxado=False,
     empurra_objetos=True,
@@ -406,6 +406,8 @@ giant_spider = Criatura(
 ```
 
 Agora que já criamos a **Giant Spider**, vamos testar a criatura.
+
+<img src="../images/player_gs.jpg" alt="tibia" width="200" height="auto">
 
 Utilizando o método `__str__` da classe **Criatura**, podemos ver o nome da criatura.
 
@@ -460,6 +462,6 @@ Giant Spider dropou [(104, 'Gold Coin'), (1, 'Plate Armor'), (1, 'Strong Health 
 
 ## Conclusão
 
-Nessa implementação prática, foi apresentado como criar uma classe **Criatura** e como criar suas respectivas habilidades, loot e vulnerabilidades.
+Nessa implementação prática, foi apresentado como criar uma classe **Criatura** e como criar suas respectivas habilidades, loot e resistencias.
 
-Agora que já foi apresentado como criar uma classe **Criatura**, você pode criar as suas próprias criaturas e testar suas habilidades, loot e vulnerabilidades.
+Agora que já foi apresentado como criar uma classe **Criatura**, você pode criar as suas próprias criaturas e testar suas habilidades, loot e resistencias.

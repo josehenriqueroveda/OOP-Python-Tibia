@@ -112,9 +112,9 @@ from classes.magia import Magia, MagiaAtaque, MagiaCura
 
 
 class Personagem:
-    def __init__(self, nome: str, classe: str, hp: int, mana: int, level: int, experiencia: int, capacidade: int, itens_equipados: list, magic_level: int, sword_fighting: int, axe_fighting: int, club_fighting: int, distance_fighting: int, shielding: int, fishing: int, fist_fighting: int):
+    def __init__(self, nome: str, vocacao: str, hp: int, mana: int, level: int, experiencia: int, capacidade: int, itens_equipados: list, magic_level: int, sword_fighting: int, axe_fighting: int, club_fighting: int, distance_fighting: int, shielding: int, fishing: int, fist_fighting: int):
         self.nome = nome
-        self.classe = classe
+        self.vocacao = vocacao
         self.hp = hp
         self.mana = mana
         self.level = level

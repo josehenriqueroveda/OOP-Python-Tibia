@@ -1,4 +1,5 @@
 # Os 4 Pilares da POO
+<img src="../images/4-pillars.jpg" alt="tibia" width="300" height="auto">
 
 ## Princípios Básicos da POO
 
@@ -9,7 +10,7 @@ Na POO, é comum falarem sobre os 4 pilares da programação orientada a objetos
 
 - **Classe:** Uma estrutura que define as características e comportamentos comuns a um grupo de objetos.
 - **Objeto:** Uma instância específica de uma classe, representando um elemento concreto no sistema.
-#
+
 ### 1.1 Atributos e Métodos de Classe
 - **Atributo:** Uma característica de um objeto, como seu nome ou cor. Em Python os atributos são definidos dentro do método especial `__init__` da classe.
 
@@ -98,12 +99,12 @@ minotaur_mage = CriaturaMagica('Minotaur Mage', 155, ['Fireball', 'Great Firebal
 
 Vamos explorar o polimorfismo através de um exemplo prático do Tibia. Consideremos duas classes: 
 
-Um **Jogador**.![Player](https://www.tibiawiki.com.br/images/3/39/Glooth_Bandit.gif) 
+Um **Jogador**.![Personagem](https://www.tibiawiki.com.br/images/3/39/Glooth_Bandit.gif) 
 ```python
-class Player:
-    def __init__(self, nome, classe, hp, mp, cap, level):
+class Personagem:
+    def __init__(self, nome, vocacao, hp, mp, cap, level):
         self._nome = nome
-        self._classe = classe
+        self._vocacao = vocacao
         self._hp = hp
         self._mp = mp
         self._cap = cap
@@ -117,7 +118,7 @@ class Player:
 
 
 # Criando o jogador
-player = Player('Darius Calad', 'Knight', 185, 90, 470, 8)
+player = Personagem('Darius Calad', 'Knight', 185, 90, 470, 8)
 ```
 E um **Rotworm**.![Rotworm](https://www.tibiawiki.com.br/images/b/b9/Rotworm.gif)
 
@@ -135,7 +136,7 @@ class Criatura:
         self._hp -= dano
 
 # Criando o Rotworm
-rotworm = Commoncriatura('Rotworm', 65, 40)
+rotworm = Criatura('Rotworm', 65, 40)
 ```
 
 Ambos possuem o método `atacar`, que recebe um alvo e um dano, e chama o método `receber_dano` do alvo.

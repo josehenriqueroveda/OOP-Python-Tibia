@@ -156,6 +156,8 @@ class Torch(Item):
 
 Pronto! Agora temos uma tocha completa, com todos os conceitos da POO aplicados. Vamos testar a tocha:
 
+<img src="../images/player_torch.jpg" alt="tibia" width="300" height="auto">
+
 - Criando a tocha
 ```python
 tocha = Torch('Torch', 5)
@@ -188,4 +190,4 @@ tocha.acende()
 
 Perceba que a tocha se apagou automaticamente após 5 minutos, pois o tempo de vida dela chegou a 0.
 
-Para praticar, tente implementar outros objetos do Tibia utilizando os conceitos da POO. Você pode utilizar a [TibiaWiki](https://www.tibiawiki.com.br/wiki/Itens) como referência para os atributos e métodos dos objetos.
+>Para praticar, tente implementar outros objetos do Tibia utilizando os conceitos da POO. Você pode utilizar a [TibiaWiki](https://www.tibiawiki.com.br/wiki/Itens) como referência para os atributos e métodos dos objetos.

@@ -1,6 +1,6 @@
 # Considerações Finais
 
-<img src="../../images/banner-oop.jfif" alt="tibia" width="300" height="auto">
+<img src="../images/banner-oop.jfif" alt="tibia" width="300" height="auto">
 
 Este é o fim do tutorial. Muita coisa foi simplificada para facilitar o entendimento e compreensão do conteúdo. Porém, o que foi apresentado aqui é o suficiente para que você possa colocar em prática os conceitos de orientação a objetos em Python.
 

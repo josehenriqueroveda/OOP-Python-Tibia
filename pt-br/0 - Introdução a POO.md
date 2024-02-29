@@ -1,6 +1,6 @@
 # Introdução à Programação Orientada a Objetos (POO)
 
-<img src="../../images/header_img.png" alt="tibia" width="400" height="auto">
+<img src="../images/header_img.png" alt="tibia" width="400" height="auto">
 
 
 ## O que é Programação Orientada a Objetos (POO)?
