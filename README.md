@@ -45,7 +45,7 @@ Teste seus conhecimentos e pratique suas habilidades com desafios relacionados a
 
 ## 🧌 Junte-se à comunidade:
 
-- Compartilhe suas dúvidas e insights na seção de **Issues**.
+- Compartilhe suas dúvidas e insights na seção de [Discussões](https://github.com/josehenriqueroveda/OOP-Python-Tibia/discussions).
 - Contribua com sugestões e melhorias para o projeto.
 
 Comece sua jornada agora mesmo!
