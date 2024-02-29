@@ -193,7 +193,9 @@ personagem = Personagem("Darius Calad", "Knight", 185, 90, 8, 5230, 470, set_equ
 
 ```
 
-Agora vamos executar alguns métodos do personagem.
+Agora vamos executar alguns métodos do personagem para simular uma batalha.
+
+<img src="../images/player_rotworm.jpg" alt="tibia" width="300" height="auto">
 
 ```python
 # Atacando um Rotworm
