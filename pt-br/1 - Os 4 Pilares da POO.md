@@ -158,3 +158,6 @@ O método `atacar` do Rotworm recebe o jogador como alvo, e chama o método `rec
 ## Conclusão
 
 Neste capítulo, aprendemos os princípios básicos da POO, incluindo os conceitos de **Abstração**, **Encapsulamento**, **Herança** e **Polimorfismo**. Esses conceitos são essenciais para o desenvolvimento de aplicações orientadas a objetos, e serão explorados em mais detalhes nos próximos capítulos através de exemplos práticos do Tibia.
+
+### Próxima Leitura:
+[2 - Implementação Prática I - Criando Objetos](2%20-%20Implementação%20Prática%20I%20-%20Criando%20Objetos.md)

@@ -242,4 +242,5 @@ Você ganhou um level.
 Nesta seção, criamos a classe `Personagem` e implementamos os seus atributos e métodos. Agora, temos uma classe que representa um personagem no Tibia, e que pode ser utilizada para criar personagens e executar ações como atacar, usar itens e magias, receber dano, ganhar experiência e ganhar level.
 
 
-
+### Próxima Leitura:
+[5 - Considerações Finais](5%20-%20Considerações%20Finais.md)

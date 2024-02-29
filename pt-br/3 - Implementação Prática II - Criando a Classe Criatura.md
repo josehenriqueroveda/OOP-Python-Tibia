@@ -465,3 +465,6 @@ Giant Spider dropou [(104, 'Gold Coin'), (1, 'Plate Armor'), (1, 'Strong Health 
 Nessa implementação prática, foi apresentado como criar uma classe **Criatura** e como criar suas respectivas habilidades, loot e resistencias.
 
 Agora que já foi apresentado como criar uma classe **Criatura**, você pode criar as suas próprias criaturas e testar suas habilidades, loot e resistencias.
+
+### Próxima Leitura:
+[4 - Implementação Prática III - Criando a Classe Personagem](4%20-%20Implementação%20Prática%20III%20-%20Criando%20a%20Classe%20Personagem.md)

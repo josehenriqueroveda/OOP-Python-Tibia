@@ -191,3 +191,7 @@ tocha.acende()
 Perceba que a tocha se apagou automaticamente após 5 minutos, pois o tempo de vida dela chegou a 0.
 
 >Para praticar, tente implementar outros objetos do Tibia utilizando os conceitos da POO. Você pode utilizar a [TibiaWiki](https://www.tibiawiki.com.br/wiki/Itens) como referência para os atributos e métodos dos objetos.
+
+
+### Próxima Leitura:
+[3 - Implementação Prática II - Criando a Classe Criatura](3%20-%20Implementação%20Prática%20II%20-%20Criando%20a%20Classe%20Criatura.md)
