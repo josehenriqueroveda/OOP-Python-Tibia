@@ -5,32 +5,32 @@
 ## 🎯 Objetivo
 Esse projeto foi criado com o objetivo de auxiliar o <u>aprendizado básico em Programação Orientada a Objetos (POO)</u> com a ajuda do lendário **Tibia**! Este repositório oferece 6 sessões que te guiarão pelos principais conceitos da POO, utilizando exemplos práticos e envolventes do famoso MMORPG.
 
-### 🔤 Sessão 0 - Introdução à POO:
+### 🔤 Sessão 0 - [Introdução à POO:](pt-br/0%20-%20Introdução%20a%20POO.md)
 
 Mergulhe no universo da POO e compreenda seus fundamentos.
 Desvende os benefícios e as características que tornam a POO uma ferramenta poderosa para o desenvolvimento de software.
 
-### ⛩ Sessão 1 - Os 4 Pilares da POO:
+### ⛩ Sessão 1 - [Os 4 Pilares da POO:](pt-br/1%20-%20Os%204%20Pilares%20da%20POO.md)
 
 Domine os pilares da POO: Encapsulamento, Herança, Abstração e Polimorfismo.
 Aprenda como esses pilares se traduzem em um código mais eficiente, organizado e reutilizável.
 
-### 🔥 Sessão 2 - Implementação Prática I - Criando Objetos:
+### 🔥 Sessão 2 - [Implementação Prática I - Criando Objetos:](pt-br/2%20-%20Implementação%20Prática%20I%20-%20Criando%20Objetos.md)
 
 Dê vida aos seus primeiros objetos em Python.
 Explore os conceitos de classes, atributos e métodos através de exemplos práticos.
 
-### 🕷 Sessão 3 - Implementação Prática II - Criando a Classe Criatura:
+### 🕷 Sessão 3 - [Implementação Prática II - Criando a Classe Criatura:](pt-br/3%20-%20Implementação%20Prática%20II%20-%20Criando%20a%20Classe%20Criatura.md)
 
 Crie uma classe "Criatura" robusta e versátil.
 Implemente herança e encapsulamento para aprimorar seu código.
 
-### 🧙🏽‍♂️ Sessão 4 - Implementação Prática III - Criando a Classe Personagem:
+### 🧙🏽‍♂️ Sessão 4 - [Implementação Prática III - Criando a Classe Personagem:](pt-br/4%20-%20Implementação%20Prática%20III%20-%20Criando%20a%20Classe%20Personagem.md)
 
 Desenvolva uma classe "Personagem" completa e interativa.
 Utilize polimorfismo para adicionar funcionalidades avançadas.
 
-### 🧭 Sessão 5 - Considerações Finais:
+### 🧭 Sessão 5 - [Considerações Finais:](pt-br/5%20-%20Considerações%20Finais.md)
 
 Reflita sobre os aprendizados da jornada e explore os próximos passos em sua aventura com a POO.
 
